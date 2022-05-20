@@ -1,13 +1,247 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html {
+  background: #000000;
+  max-width: 1200px;
+  margin: 0 auto;
 }
+
+#root {
+  background: #233d4d;
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #233d4d;
+  height: 100vh;
+  width: 100%;
+}
+
+.meal-menu {
+  width: 100%;
+  max-width: 1200px;
+  height: 60px;
+  background: #000000;
+  display: flex;
+  position: fixed;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6117647059);
+  z-index: 100;
+}
+
+.meal-menu-link {
+  text-decoration: none;
+}
+
+.meal-menu-icons {
+  color: #a1c181;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+  width: 60px;
+  margin: 0 10px;
+  transition: all 0.3s ease-in-out;
+  font-size: 40px;
+}
+
+.meal-menu-icons:hover {
+  color: #619b8a;
+}
+
+.meal-menu-spacing {
+  width: 100%;
+  height: 60px;
+}
+
+.menu-input {
+  height: 40px;
+  width: 300px;
+  margin-top: 10px;
+  font-family: "Montserrat", sans-serif;
+  padding: 5px;
+}
+
+.menu-search {
+  position: relative;
+}
+
+.menu-search-complete {
+  position: absolute;
+  width: 100%;
+  max-height: 300px;
+  top: 60px;
+  left: 0px;
+  padding: 0 20px 0px 20px;
+  color: #ffffff;
+  background: #000000;
+  border-radius: 0 0 20px 20px;
+  overflow-y: scroll;
+}
+.menu-search-complete ul {
+  list-style-type: none;
+}
+.menu-search-complete ul li {
+  padding: 0 10px 20px 10px;
+}
+
+.meal-category {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+}
+
+.meal-card {
+  margin: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  text-decoration: none;
+  background: #fcca46;
+  border-radius: 20px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6117647059);
+  transition: all 0.3s ease-in-out;
+}
+.meal-card img {
+  padding: 10px 20px;
+  border-radius: 30px;
+  max-width: 280px;
+}
+.meal-card h1 {
+  font-family: "Dosis", sans-serif;
+  color: #000000;
+  margin: 10px 10px 0 10px;
+  text-align: center;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2392156863);
+  text-transform: capitalize;
+}
+.meal-card h2 {
+  font-family: "Dosis", sans-serif;
+  color: #000000;
+  margin: 10px 10px 0 10px;
+  text-align: center;
+  height: 31px;
+  overflow: hidden;
+  background: #fcca46;
+  width: fit-content;
+  transition: all 0.3s ease-in-out;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2392156863);
+  text-transform: capitalize;
+}
+
+.meal-card:hover {
+  background: #fe7f2d;
+}
+.meal-card:hover h2 {
+  z-index: 1;
+  background: #fe7f2d;
+  height: fit-content;
+}
+
+.meal-recipe {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+  margin: 0 auto;
+  padding-top: 10px;
+  max-width: 1100px;
+}
+
+.meal-info {
+  width: 500px;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 30px;
+  background: #fcca46;
+  margin: 20px;
+}
+.meal-info h1 {
+  margin: 10px;
+  font-family: "Dosis", sans-serif;
+  text-transform: capitalize;
+}
+.meal-info p {
+  margin: 10px;
+  font-family: "Montserrat", sans-serif;
+}
+.meal-info img {
+  max-width: 100%;
+  padding: 10px;
+  border-radius: 30px;
+}
+
+.meal-ingredients-wrapper {
+  background: #fcca46;
+  border-radius: 30px;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+  padding: 20px;
+}
+
+.meal-ingredients {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 10px;
+  width: 100%;
+}
+.meal-ingredients li {
+  display: flex;
+  list-style-type: none;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 0 20px;
+  font-family: "Montserrat", sans-serif;
+  text-align: right;
+}
+.meal-ingredients li img {
+  height: 50px;
+  padding: 0 0 0 10px;
+}
+.meal-ingredients li:last-child {
+  text-align: left;
+  justify-content: flex-start;
+}
+
+.meal-ingredients-title {
+  font-weight: bold;
+}
+
+.meal-instructions {
+  background: #fcca46;
+  border-radius: 30px;
+  padding: 30px;
+  max-width: 1040px;
+  margin: 20px;
+}
+.meal-instructions h2 {
+  font-family: "Dosis", sans-serif;
+  text-transform: capitalize;
+}
+.meal-instructions p {
+  font-family: "Montserrat", sans-serif;
+  margin: 10px 0;
+}
+
+.meal-video {
+  width: 1040px;
+  max-width: 100%;
+  height: 640px;
+  max-height: calc(100vw - 200px);
+  margin: 20px;
+}
+
+/*# sourceMappingURL=index.css.map */

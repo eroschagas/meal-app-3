@@ -1,17 +1,30 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+} from "react-router-dom";
+import { Home } from "./templates/Home";
+import { Category } from "./templates/Category";
+import { Meal } from "./templates/Meal";
+import { Void } from "./templates/Void";
+import { Menu } from "./components/Menu";
+import { Random } from "./templates/Random";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+const root = ReactDOM.createRoot(
+  document.getElementById("root"),
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+root.render(
+  <BrowserRouter>
+    <Menu />
+    <Routes>
+      <Route path="*" element={<Void />} />
+      <Route path="/:category/:meal" element={<Meal />} />
+      <Route path="/:category" element={<Category />} />
+      <Route path="/random" element={<Random />} />
+      <Route path="/" element={<Home />} />
+    </Routes>
+  </BrowserRouter>,
+);

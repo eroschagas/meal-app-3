@@ -1,0 +1,46 @@
+.meal-category
+    display: grid
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr))
+.meal-card
+    margin: 15px
+    display: flex
+    flex-direction: column
+    justify-content: space-around
+    align-items: center
+    text-decoration: none
+    background: $c3
+    border-radius: 20px
+    box-shadow: 2px 2px 4px $cs
+    transition: all 0.3s ease-in-out
+    img
+        padding: 10px 20px
+        border-radius: 30px
+        max-width: 280px
+
+    h1
+        font-family: $fh
+        color: $c0
+        margin: 10px 10px 0 10px
+        text-align: center
+        text-shadow: 1px 1px 2px $cts
+        text-transform: capitalize
+
+    h2
+        font-family: $fh
+        color: $c0
+        margin: 10px 10px 0 10px
+        text-align: center
+        height: 31px
+        overflow: hidden
+        background: $c3
+        width: fit-content
+        transition: all 0.3s ease-in-out
+        text-shadow: 1px 1px 2px $cts
+        text-transform: capitalize
+
+.meal-card:hover
+    background: $c4
+    h2
+        z-index: 1
+        background: $c4
+        height: fit-content
