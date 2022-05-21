@@ -189,7 +189,7 @@ html {
   justify-content: center;
   align-items: center;
   margin: 20px;
-  padding: 20px;
+  padding: 20px 0;
 }
 
 .meal-ingredients {
@@ -203,13 +203,16 @@ html {
   list-style-type: none;
   justify-content: flex-end;
   align-items: center;
-  margin: 0 20px;
+  margin: 0 10px;
   font-family: "Montserrat", sans-serif;
   text-align: right;
 }
+.meal-ingredients li p {
+  white-space: wrap;
+}
 .meal-ingredients li img {
   height: 50px;
-  padding: 0 0 0 10px;
+  padding: 0 0 0 5px;
 }
 .meal-ingredients li:last-child {
   text-align: left;
@@ -234,6 +237,8 @@ html {
 .meal-instructions p {
   font-family: "Montserrat", sans-serif;
   margin: 10px 0;
+  line-height: 22px;
+  text-align: justify;
 }
 
 .meal-video {
@@ -242,6 +247,12 @@ html {
   height: 640px;
   max-height: calc(100vw - 200px);
   margin: 20px;
+}
+
+@media (max-width: 500px) {
+  .meal-ingredients {
+    grid-template-columns: 3fr 2fr;
+  }
 }
 
 /*# sourceMappingURL=index.css.map */
