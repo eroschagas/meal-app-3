@@ -1,25 +1,28 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import { useFetch } from "../../hooks/useFetch";
+import { FetchSearch } from "../../utils/fetchSearch";
 
 export const Menu = () => {
   const [searchValue, setSearchValue] = useState("");
-  var searchUrl = "none";
-  if (searchValue.length > 0) {
-    searchUrl =
-      "https://www.themealdb.com/api/json/v1/1/search.php?f=" +
-      searchValue.toLocaleLowerCase().substring(0, 1);
-  }
-  const search = useFetch(searchUrl, "meals");
+  const [searchClass, setSearchClass] =
+    useState("menu-input");
   const handleChange = (e) => {
     const { value } = e.target;
     setSearchValue(value);
   };
-  useEffect(() => {
-    console.log(search);
-    console.log(searchUrl);
-  }, [searchUrl, search]);
 
+  const search = FetchSearch();
+
+  const handleFocus = () => {
+    setSearchClass("menu-input menu-input-focus");
+  };
+
+  const handleOnBlur = () => {
+    setTimeout(function () {
+      setSearchValue("");
+    }, 200);
+    setSearchClass("menu-input menu-input-not-focus");
+  };
   return (
     <>
       <div className="meal-menu">
@@ -46,33 +49,31 @@ export const Menu = () => {
         </Link>
         <div className="menu-search">
           <input
-            className="menu-input"
+            className={searchClass}
             type="search"
             value={searchValue}
             onChange={handleChange}
-            placeholder="Search"
+            placeholder="Search 🔎︎"
+            onFocus={handleFocus}
+            onBlur={handleOnBlur}
           />
           {searchValue.length > 0 && search != null ? (
             <div className="menu-search-complete">
               <ul>
                 {search
                   .filter((p) => {
-                    return p.strMeal
+                    return p
                       .toLowerCase()
                       .includes(searchValue.toLowerCase());
                   })
                   .map((p) => (
-                    <li key={p.idMeal}>
+                    <li key={p}>
                       <Link
+                        className="menu-search-link"
                         reloadDocument
-                        to={
-                          "/" +
-                          p.strCategory +
-                          "/" +
-                          p.strMeal
-                        }
+                        to={"/" + "search" + "/" + p}
                       >
-                        {p.strMeal}
+                        {p}
                       </Link>
                     </li>
                   ))}

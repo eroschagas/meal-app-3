@@ -94,6 +94,5 @@ export const FetchSearch = () => {
     ...breakfastNames,
     ...goatNames,
   ];
-  console.log(fetchNames);
   return fetchNames;
 };

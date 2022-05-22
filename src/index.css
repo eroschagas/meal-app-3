@@ -23,6 +23,22 @@ html {
   width: 100%;
 }
 
+@keyframes searchGrow {
+  0% {
+    width: 80px;
+  }
+  100% {
+    width: 300px;
+  }
+}
+@keyframes searchShrink {
+  0% {
+    width: 300px;
+  }
+  100% {
+    width: 80px;
+  }
+}
 .meal-menu {
   width: 100%;
   max-width: 1200px;
@@ -62,10 +78,18 @@ html {
 
 .menu-input {
   height: 40px;
-  width: 300px;
+  width: 80px;
   margin-top: 10px;
   font-family: "Montserrat", sans-serif;
   padding: 5px;
+}
+
+.menu-input-focus {
+  animation: searchGrow 0.5s forwards ease-in-out;
+}
+
+.menu-input-not-focus {
+  animation: searchShrink 0.5s forwards ease-in-out;
 }
 
 .menu-search {
@@ -91,6 +115,19 @@ html {
   padding: 0 10px 20px 10px;
 }
 
+.menu-search-link {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+@keyframes cardGrow {
+  from {
+    max-height: 31px;
+  }
+  to {
+    max-height: 93px;
+  }
+}
 .meal-category {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));

@@ -1,3 +1,16 @@
+@keyframes searchGrow
+    0%
+        width: 80px
+
+    100%
+        width: 300px
+@keyframes searchShrink
+    0%
+        width: 300px
+
+    100%
+        width: 80px
+
 .meal-menu
     width: 100%
     max-width: 1200px
@@ -27,10 +40,14 @@
     height: 60px
 .menu-input
     height: 40px
-    width: 300px
+    width: 80px
     margin-top: 10px
     font-family: $fp
     padding: 5px
+.menu-input-focus
+    animation: searchGrow 0.5s forwards ease-in-out
+.menu-input-not-focus
+    animation: searchShrink 0.5s forwards ease-in-out
 .menu-search
     position: relative
 .menu-search-complete
@@ -48,3 +65,6 @@
         list-style-type: none
         li
             padding: 0 10px 20px 10px
+.menu-search-link
+    text-decoration: none
+    color: $cf

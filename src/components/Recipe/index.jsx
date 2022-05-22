@@ -64,16 +64,24 @@ export const Recipe = (props) => {
             <p>{p.strInstructions}</p>
           </div>
           <div className="meal-video">
-            <iframe
-              src={
-                "https://www.youtube.com/embed/" +
-                p.strYoutube.substr(
-                  p.strYoutube.length - 11,
-                )
-              }
-              width="100%"
-              height="100%"
-            ></iframe>
+            {p.strYoutube.length > 0 ? (
+              <iframe
+                src={
+                  "https://www.youtube.com/embed/" +
+                  p.strYoutube.substr(
+                    p.strYoutube.length - 11,
+                  )
+                }
+                width="100%"
+                height="100%"
+              ></iframe>
+            ) : (
+              <iframe
+                src="https://www.youtube.com/embed/O5rYsoAZ_sk"
+                width="100%"
+                height="100%"
+              ></iframe>
+            )}
           </div>
         </div>
       ) : (
