@@ -12,6 +12,7 @@ import { Meal } from "./templates/Meal";
 import { Void } from "./templates/Void";
 import { Menu } from "./components/Menu";
 import { Random } from "./templates/Random";
+import { Redirrandom } from "./utils/Redirection/Redirrandom";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root"),
@@ -21,6 +22,10 @@ root.render(
     <Menu />
     <Routes>
       <Route path="*" element={<Void />} />
+      <Route
+        path="/redirrandom"
+        element={<Redirrandom />}
+      />
       <Route path="/random" element={<Random />} />
       <Route path="/:category/:meal" element={<Meal />} />
       <Route path="/:category" element={<Category />} />

@@ -83,9 +83,9 @@ export const Menu = () => {
             <h1>Previous</h1>
           </Link>
           <Link
-            reloadDocument
+            // reloadDocument
             className="meal-menu-link"
-            to={"/random"}
+            to={"/redirrandom"}
             onClick={handleMenuChange}
           >
             <div className="meal-menu-icons">
