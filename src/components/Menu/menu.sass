@@ -10,7 +10,17 @@
 
     100%
         width: 80px
+@keyframes appear
+    0%
+        opacity: 0
 
+    100%
+        opacity: 1
+@keyframes disappear
+    0%
+        opacity: 1
+    100%
+        opacity: 0
 .meal-menu
     width: 100%
     max-width: 1200px
@@ -20,21 +30,30 @@
     position: fixed
     box-shadow: 2px 2px 4px $cs
     z-index: 100
+.meal-menu-link-container
+    display: flex
 .meal-menu-link
     text-decoration: none
-.meal-menu-icons
-    color: $c2
-    text-decoration: none
-    display: flex
-    align-items: center
-    justify-content: center
-    height: 60px
-    width: 60px
-    margin: 0 10px
-    transition: all 0.3s ease-in-out
-    font-size: 40px
-.meal-menu-icons:hover
-    color: $c1
+    h1
+        font-family: $fh
+        font-size: 20px
+        text-align: center
+        transition: all 0.3s ease-in-out
+        color: $c2
+    .meal-menu-icons
+        color: $c2
+        text-decoration: none
+        display: flex
+        align-items: flex-end
+        justify-content: center
+        height: 30px
+        width: 70px
+        margin: 0 10px
+        transition: all 0.3s ease-in-out
+        font-size: 25px
+.meal-menu-link:hover
+    .meal-menu-icons, h1
+        color: $c1
 .meal-menu-spacing
     width: 100%
     height: 60px
@@ -50,6 +69,7 @@
     animation: searchShrink 0.5s forwards ease-in-out
 .menu-search
     position: relative
+    margin-left: 20px
 .menu-search-complete
     position: absolute
     width: 100%
@@ -68,3 +88,61 @@
 .menu-search-link
     text-decoration: none
     color: $cf
+.menu-bars-container
+    display: none
+
+@media (max-width: 700px)
+    .menu-bars-container
+        margin: 10px
+        display: inline-block
+        cursor: pointer
+
+    .menu-bar1, .menu-bar2, .menu-bar3
+        width: 35px
+        height: 5px
+        background-color: $c2
+        margin: 6px 0
+        transition: 0.4s
+
+    .menu-change .menu-bar1
+        -webkit-transform: rotate(-45deg) translate(-9px, 7px)
+        transform: rotate(-45deg) translate(-9px, 7px)
+
+    .menu-change .menu-bar2
+        opacity: 0
+
+    .menu-change .menu-bar3
+        -webkit-transform: rotate(45deg) translate(-8px, -7px)
+        transform: rotate(45deg) translate(-8px, -7px)
+    .meal-menu-link-container
+        position: fixed
+        z-index: 100
+        top: 60px
+        height: 100%
+        width: 100%
+        background: $cmb
+        flex-direction: column
+        padding: 5%
+        display: none
+        transition: all 0.4s ease-out
+    .menu-input
+        width: 300px
+    .menu-search
+        width: 300px
+    .menu-input-focus
+        animation: none
+    .menu-input-not-focus
+        animation: none
+    .menu-display-appear
+        display: block
+        animation: appear 0.4s forwards ease-in-out
+    .menu-display-disappear
+        display: block
+        animation: disappear 0.4s forwards ease-in-out
+    .meal-menu-link
+        display: flex
+        align-items: center
+        .meal-menu-icons
+            width: 40px
+            height: 50px
+            align-items: center

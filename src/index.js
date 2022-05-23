@@ -21,9 +21,9 @@ root.render(
     <Menu />
     <Routes>
       <Route path="*" element={<Void />} />
+      <Route path="/random" element={<Random />} />
       <Route path="/:category/:meal" element={<Meal />} />
       <Route path="/:category" element={<Category />} />
-      <Route path="/random" element={<Random />} />
       <Route path="/" element={<Home />} />
     </Routes>
   </BrowserRouter>,
