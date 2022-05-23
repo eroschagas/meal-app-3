@@ -118,7 +118,6 @@ export const Menu = () => {
                       <li key={p}>
                         <Link
                           className="menu-search-link"
-                          reloadDocument
                           to={"/" + "redirsearch" + "/" + p}
                         >
                           {p}
