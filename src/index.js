@@ -13,6 +13,7 @@ import { Void } from "./templates/Void";
 import { Menu } from "./components/Menu";
 import { Random } from "./templates/Random";
 import { Redirrandom } from "./utils/Redirection/Redirrandom";
+import { Redirsearch } from "./utils/Redirection/Redirsearch";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root"),
@@ -25,6 +26,10 @@ root.render(
       <Route
         path="/redirrandom"
         element={<Redirrandom />}
+      />
+      <Route
+        path="/redirsearch/:params"
+        element={<Redirsearch />}
       />
       <Route path="/random" element={<Random />} />
       <Route path="/:category/:meal" element={<Meal />} />

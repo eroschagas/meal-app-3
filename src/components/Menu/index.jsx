@@ -119,7 +119,7 @@ export const Menu = () => {
                         <Link
                           className="menu-search-link"
                           reloadDocument
-                          to={"/" + "search" + "/" + p}
+                          to={"/" + "redirsearch" + "/" + p}
                         >
                           {p}
                         </Link>
