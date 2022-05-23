@@ -83,7 +83,6 @@ export const Menu = () => {
             <h1>Previous</h1>
           </Link>
           <Link
-            // reloadDocument
             className="meal-menu-link"
             to={"/redirrandom"}
             onClick={handleMenuChange}
@@ -117,6 +116,7 @@ export const Menu = () => {
                     .map((p) => (
                       <li key={p}>
                         <Link
+                          onClick={handleMenuChange}
                           className="menu-search-link"
                           to={"/" + "redirsearch" + "/" + p}
                         >
