@@ -62,24 +62,31 @@ export const Menu = () => {
           <div className="menu-bar3"></div>
         </div>
         <div className={mobileClass.menu}>
-          <Link className="meal-menu-link" to={"/"}>
+          <Link
+            onClick={handleMenuChange}
+            className="meal-menu-link"
+            to={"/"}
+          >
             <div className="meal-menu-icons">
               <ion-icon name="home"></ion-icon>{" "}
             </div>
             <h1>Home</h1>
           </Link>
-          <Link className="meal-menu-link" to={-1}>
+          <Link
+            onClick={handleMenuChange}
+            className="meal-menu-link"
+            to={-1}
+          >
             <div className="meal-menu-icons">
               <ion-icon name="play-back"></ion-icon>{" "}
             </div>
             <h1>Previous</h1>
           </Link>
           <Link
+            reloadDocument
             className="meal-menu-link"
-            onClick={() => {
-              window.location.href = "/random";
-            }}
             to={"/random"}
+            onClick={handleMenuChange}
           >
             <div className="meal-menu-icons">
               <ion-icon name="dice"></ion-icon>{" "}
