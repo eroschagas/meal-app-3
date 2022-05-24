@@ -48,10 +48,7 @@ export const Recipe = (props) => {
                       <p>
                         {p[
                           "strMeasure" + (i + 1)
-                        ][0].toUpperCase() +
-                          p["strMeasure" + (i + 1)].slice(
-                            1,
-                          )}
+                        ].toLowerCase()}
                       </p>
                       <img
                         src={

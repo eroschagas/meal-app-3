@@ -456,7 +456,7 @@ html {
   display: flex;
   flex-direction: column;
   width: 120px;
-  height: 150px;
+  min-height: 150px;
   border-radius: 10px;
   margin: 15px;
   padding: 10px;
@@ -520,12 +520,6 @@ html {
   height: 640px;
   max-height: calc(100vw - 200px);
   margin: 20px;
-}
-
-@media (max-width: 500px) {
-  .meal-ingredients {
-    grid-template-columns: 3fr 2fr;
-  }
 }
 
 /*# sourceMappingURL=index.css.map */
