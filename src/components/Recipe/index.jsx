@@ -11,6 +11,18 @@ export const Recipe = (props) => {
             <h1>{p.strMeal}</h1>
             <p>Cuisine: {p.strArea}</p>
             <img src={p.strMealThumb} alt={p.strMeal} />
+            <p>Try another recipe:</p>
+            <a
+              className="meal-recipe-youtube"
+              href={
+                "https://www.youtube.com/results?search_query=how+to+make+" +
+                p.strMeal
+              }
+              target="_blank"
+              rel="noreferrer"
+            >
+              <ion-icon name="logo-youtube"></ion-icon>
+            </a>
           </div>
           <ul className="meal-ingredients-wrapper">
             <div className="meal-ingredients meal-ingredients-title">

@@ -60,10 +60,13 @@ export const Home = () => {
             rel="noreferrer"
           >
             {" "}
-            Meal DB API
-          </a>
+            The Meal DB
+          </a>{" "}
         </span>
-        .
+        API. <br /> As this is an old API, some youtube
+        links may be broken or with bad resolution. I added
+        a button labeled as &quot;Try another recipe&quot;
+        to search new recipes on youtube.
         <br /> Hope you find your meal!
       </p>
       <Link className="home-card" to={"/categories"}>

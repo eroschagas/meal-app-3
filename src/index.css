@@ -463,6 +463,16 @@ html {
   justify-content: flex-start;
 }
 
+.meal-recipe-youtube {
+  text-decoration: none;
+  color: red;
+  font-size: 50px;
+  background: linear-gradient(rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 21%, rgb(255, 255, 255) 21%, rgb(255, 253, 253) 62%, rgba(255, 255, 255, 0) 62%);
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
 .meal-ingredients-title {
   font-weight: bold;
 }
