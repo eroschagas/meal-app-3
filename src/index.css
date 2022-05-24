@@ -8,6 +8,7 @@ html {
   background: #000000;
   max-width: 1200px;
   margin: 0 auto;
+  overflow-y: scroll;
 }
 
 #root {
@@ -158,7 +159,7 @@ html {
   margin: 5px 20px;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 900px) {
   .menu-bars-container {
     margin: 10px;
     display: inline-block;
@@ -246,6 +247,78 @@ html {
     width: 80%;
   }
 }
+.meal-home {
+  min-height: calc(100vh - 60px);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.meal-home img {
+  background: #fcca46;
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6117647059);
+  margin: 10px 0;
+}
+.meal-home p {
+  margin: 10px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  color: #ffffff;
+}
+.meal-home p span {
+  font-weight: bold;
+  position: relative;
+}
+.meal-home p span a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.social-box {
+  position: absolute;
+  width: 150px;
+  height: 50px;
+  background: rgba(0, 0, 0, 0.862745098);
+  top: 0;
+  left: 0;
+  z-index: 1;
+  border-radius: 10px;
+  display: none;
+}
+.social-box .social-wrap {
+  display: flex;
+}
+.social-box .social-wrap .social-logo {
+  height: 30px;
+  width: 30px;
+  position: relative;
+  font-size: 30px;
+  margin: 10px;
+}
+
+.home-card {
+  margin: 10px;
+  padding: 10px;
+  text-decoration: none;
+  color: #000000;
+  background: #fcca46;
+  border-radius: 20px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6117647059);
+  font-family: "Dosis", sans-serif;
+  font-weight: bold;
+  font-size: 30px;
+  width: 200px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-box-on {
+  display: block;
+}
+
 @keyframes cardGrow {
   from {
     max-height: 31px;
@@ -254,6 +327,10 @@ html {
     max-height: 93px;
   }
 }
+.meal-section {
+  min-height: calc(100vh - 60px);
+}
+
 .meal-category {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
@@ -279,7 +356,7 @@ html {
 .meal-card h1 {
   font-family: "Dosis", sans-serif;
   color: #000000;
-  margin: 10px 10px 0 10px;
+  margin: 10px 10px 0px 10px;
   text-align: center;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2392156863);
   text-transform: capitalize;
@@ -287,7 +364,7 @@ html {
 .meal-card h2 {
   font-family: "Dosis", sans-serif;
   color: #000000;
-  margin: 10px 10px 0 10px;
+  margin: 10px 10px 0px 10px;
   text-align: center;
   height: 31px;
   overflow: hidden;
@@ -305,6 +382,10 @@ html {
   z-index: 1;
   background: #fe7f2d;
   height: fit-content;
+}
+
+.meal-country h2 {
+  margin-bottom: 10px;
 }
 
 .meal-recipe {

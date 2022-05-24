@@ -1,48 +1,60 @@
-@keyframes cardGrow
-    from
-        max-height: 31px
-    to
-        max-height: 93px
-.meal-category
-    display: grid
-    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr))
-.meal-card
-    margin: 15px
+.meal-home
+    min-height: calc( 100vh - 60px )
+    padding: 20px
     display: flex
     flex-direction: column
-    justify-content: space-around
-    align-items: center
+    img
+        background: $c3
+        width: 100%
+        border-radius: 10px
+        box-shadow: 2px 2px 4px $cs
+        margin: 10px 0
+    p
+        margin: 10px
+        font-family: $fp
+        font-size: 20px
+        color: $cf
+        span
+            font-weight: bold
+            position: relative
+            a
+                text-decoration: none
+                color: $cf
+.social-box
+    position: absolute
+    width: 150px
+    height: 50px
+    background: $cmb
+    top: 0
+    left: 0
+    z-index: 1
+    border-radius: 10px
+    display: none
+    .social-wrap
+        display: flex
+        .social-logo
+            height: 30px
+            width: 30px
+            position: relative
+            font-size: 30px
+            margin: 10px
+
+.home-card
+    margin: 10px
+    padding: 10px
     text-decoration: none
+    color: $c0
     background: $c3
     border-radius: 20px
     box-shadow: 2px 2px 4px $cs
-    transition: all 0.3s ease-in-out
-    img
-        padding: 10px 20px
-        border-radius: 30px
-        max-width: 280px
-    h1
-        font-family: $fh
-        color: $c0
-        margin: 10px 10px 0 10px
-        text-align: center
-        text-shadow: 1px 1px 2px $cts
-        text-transform: capitalize
-    h2
-        font-family: $fh
-        color: $c0
-        margin: 10px 10px 0 10px
-        text-align: center
-        height: 31px
-        overflow: hidden
-        background: $c3
-        width: fit-content
-        transition: all 0.3s ease-in-out
-        text-shadow: 1px 1px 2px $cts
-        text-transform: capitalize
-.meal-card:hover
-    background: $c4
-    h2
-        z-index: 1
-        background: $c4
-        height: fit-content
+    font-family: $fh
+    font-weight: bold
+    font-size: 30px
+    width: 200px
+    height: 100px
+    display: flex
+    align-items: center
+    justify-content: center
+
+.social-box-on
+    display: block

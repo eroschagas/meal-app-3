@@ -12,6 +12,8 @@ export const Menu = () => {
   const [animClass, setAnimClass] = useState({
     random: "",
     home: "",
+    categories: "",
+    region: "",
   });
   const [searchClass, setSearchClass] =
     useState("menu-input");
@@ -66,8 +68,25 @@ export const Menu = () => {
       home: "meal-menu-icons animate__animated animate__jello",
     });
   };
+  const handleAnimationInCategories = () => {
+    setAnimClass({
+      categories:
+        "meal-menu-icons animate__animated animate__heartBeat",
+    });
+  };
+  const handleAnimationInRegion = () => {
+    setAnimClass({
+      region:
+        "meal-menu-icons animate__animated animate__swing",
+    });
+  };
   const handleAnimationOut = () => {
-    setAnimClass({ random: "", home: "" });
+    setAnimClass({
+      random: "",
+      home: "",
+      categories: "",
+      region: "",
+    });
   };
   return (
     <>
@@ -97,6 +116,38 @@ export const Menu = () => {
               <ion-icon name="home"></ion-icon>{" "}
             </div>
             <h1>Home</h1>
+          </Link>
+          <Link
+            onMouseEnter={handleAnimationInCategories}
+            onMouseLeave={handleAnimationOut}
+            onClick={handleMenuChange}
+            className="meal-menu-link"
+            to={"/categories"}
+          >
+            <div
+              className={
+                "meal-menu-icons " + animClass.categories
+              }
+            >
+              <ion-icon name="grid"></ion-icon>{" "}
+            </div>
+            <h1>Categories</h1>
+          </Link>
+          <Link
+            onMouseEnter={handleAnimationInRegion}
+            onMouseLeave={handleAnimationOut}
+            onClick={handleMenuChange}
+            className="meal-menu-link"
+            to={"/area"}
+          >
+            <div
+              className={
+                "meal-menu-icons " + animClass.region
+              }
+            >
+              <ion-icon name="map"></ion-icon>{" "}
+            </div>
+            <h1>Region</h1>
           </Link>
           <Link
             onMouseEnter={handleAnimationInRandom}
