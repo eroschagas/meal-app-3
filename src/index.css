@@ -151,7 +151,14 @@ html {
   display: none;
 }
 
-@media (max-width: 700px) {
+.menu-logo {
+  background: #ffffff;
+  padding: 5px;
+  border-radius: 10px;
+  margin: 5px 20px;
+}
+
+@media (max-width: 800px) {
   .menu-bars-container {
     margin: 10px;
     display: inline-block;
@@ -188,7 +195,7 @@ html {
     width: 100%;
     background: rgba(0, 0, 0, 0.862745098);
     flex-direction: column;
-    padding: 5%;
+    padding: 20px 10px;
     display: none;
     transition: all 0.4s ease-out;
   }
@@ -227,6 +234,16 @@ html {
     width: 40px;
     height: 50px;
     align-items: center;
+  }
+
+  .menu-search-complete {
+    top: 55px;
+    padding: 10px 20px;
+    max-height: 250px;
+  }
+
+  .menu-logo {
+    width: 80%;
   }
 }
 @keyframes cardGrow {

@@ -90,27 +90,28 @@
     color: $cf
 .menu-bars-container
     display: none
+.menu-logo
+    background: $cf
+    padding: 5px
+    border-radius: 10px
+    margin: 5px 20px
 
-@media (max-width: 700px)
+@media (max-width: 800px)
     .menu-bars-container
         margin: 10px
         display: inline-block
         cursor: pointer
-
     .menu-bar1, .menu-bar2, .menu-bar3
         width: 35px
         height: 5px
         background-color: $c2
         margin: 6px 0
         transition: 0.4s
-
     .menu-change .menu-bar1
         -webkit-transform: rotate(-45deg) translate(-9px, 7px)
         transform: rotate(-45deg) translate(-9px, 7px)
-
     .menu-change .menu-bar2
         opacity: 0
-
     .menu-change .menu-bar3
         -webkit-transform: rotate(45deg) translate(-8px, -7px)
         transform: rotate(45deg) translate(-8px, -7px)
@@ -122,7 +123,7 @@
         width: 100%
         background: $cmb
         flex-direction: column
-        padding: 5%
+        padding: 20px 10px
         display: none
         transition: all 0.4s ease-out
     .menu-input
@@ -146,3 +147,9 @@
             width: 40px
             height: 50px
             align-items: center
+    .menu-search-complete
+        top: 55px
+        padding: 10px 20px
+        max-height: 250px
+    .menu-logo
+        width: 80%

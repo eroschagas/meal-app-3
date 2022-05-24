@@ -1,12 +1,17 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { FetchSearch } from "../../utils/fetchSearch";
+import Logo from "../../img/logo.svg";
 
 export const Menu = () => {
   const [searchValue, setSearchValue] = useState("");
   const [mobileClass, setMobileClass] = useState({
     bars: "menu-bars-container",
     menu: "meal-menu-link-container",
+  });
+  const [animClass, setAnimClass] = useState({
+    random: "",
+    home: "",
   });
   const [searchClass, setSearchClass] =
     useState("menu-input");
@@ -50,6 +55,20 @@ export const Menu = () => {
       }, 400);
     }
   };
+  const handleAnimationInRandom = () => {
+    setAnimClass({
+      random:
+        "meal-menu-icons animate__animated animate__shakeX",
+    });
+  };
+  const handleAnimationInHome = () => {
+    setAnimClass({
+      home: "meal-menu-icons animate__animated animate__jello",
+    });
+  };
+  const handleAnimationOut = () => {
+    setAnimClass({ random: "", home: "" });
+  };
   return (
     <>
       <div className="meal-menu">
@@ -61,13 +80,20 @@ export const Menu = () => {
           <div className="menu-bar2"></div>
           <div className="menu-bar3"></div>
         </div>
+        <img className="menu-logo" src={Logo} alt="Logo" />
         <div className={mobileClass.menu}>
           <Link
+            onMouseEnter={handleAnimationInHome}
+            onMouseLeave={handleAnimationOut}
             onClick={handleMenuChange}
             className="meal-menu-link"
             to={"/"}
           >
-            <div className="meal-menu-icons">
+            <div
+              className={
+                "meal-menu-icons " + animClass.home
+              }
+            >
               <ion-icon name="home"></ion-icon>{" "}
             </div>
             <h1>Home</h1>
@@ -83,11 +109,17 @@ export const Menu = () => {
             <h1>Previous</h1>
           </Link>
           <Link
+            onMouseEnter={handleAnimationInRandom}
+            onMouseLeave={handleAnimationOut}
             className="meal-menu-link"
             to={"/redirrandom"}
             onClick={handleMenuChange}
           >
-            <div className="meal-menu-icons">
+            <div
+              className={
+                "meal-menu-icons " + animClass.random
+              }
+            >
               <ion-icon name="dice"></ion-icon>{" "}
             </div>
             <h1>Random</h1>
