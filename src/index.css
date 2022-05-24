@@ -408,6 +408,7 @@ html {
   border-radius: 30px;
   background: #fcca46;
   margin: 20px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6117647059);
 }
 .meal-info h1 {
   margin: 10px;
@@ -434,33 +435,38 @@ html {
   align-items: center;
   margin: 20px;
   padding: 20px 0;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6117647059);
+}
+
+.meal-inner-ingredients-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 
 .meal-ingredients {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  padding: 10px;
-  width: 100%;
-}
-.meal-ingredients li {
   display: flex;
-  list-style-type: none;
-  justify-content: flex-end;
+  flex-direction: column;
+  width: 120px;
+  height: 150px;
+  border-radius: 10px;
+  margin: 15px;
+  padding: 10px;
+  justify-content: center;
   align-items: center;
-  margin: 0 10px;
-  font-family: "Montserrat", sans-serif;
-  text-align: right;
+  background: #fe7f2d;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6117647059);
+  text-decoration: none;
+  color: #000000;
 }
-.meal-ingredients li p {
-  white-space: wrap;
+.meal-ingredients p {
+  text-align: center;
 }
-.meal-ingredients li img {
+.meal-ingredients img {
   height: 50px;
-  padding: 0 0 0 5px;
-}
-.meal-ingredients li:last-child {
-  text-align: left;
-  justify-content: flex-start;
+  margin: 10px;
 }
 
 .meal-recipe-youtube {
@@ -475,6 +481,7 @@ html {
 
 .meal-ingredients-title {
   font-weight: bold;
+  font-family: "Montserrat", sans-serif;
 }
 
 .meal-instructions {
@@ -483,6 +490,7 @@ html {
   padding: 30px;
   max-width: 1040px;
   margin: 20px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6117647059);
 }
 .meal-instructions h2 {
   font-family: "Dosis", sans-serif;

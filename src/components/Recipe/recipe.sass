@@ -17,6 +17,8 @@
     border-radius: 30px
     background: $c3
     margin: 20px
+    box-shadow: 2px 2px 4px $cs
+
     h1
         margin: 10px
         font-family: $fh
@@ -38,27 +40,32 @@
     align-items: center
     margin: 20px
     padding: 20px 0
+    box-shadow: 2px 2px 4px $cs
+.meal-inner-ingredients-wrapper
+    display: flex
+    flex-direction: row
+    flex-wrap: wrap
+    justify-content: center
+    align-items: center
 .meal-ingredients
-    display: grid
-    grid-template-columns: 1fr 1fr
+    display: flex
+    flex-direction: column
+    width: 120px
+    height: 150px
+    border-radius: 10px
+    margin: 15px
     padding: 10px
-    width: 100%
-    li
-        display: flex
-        list-style-type: none
-        justify-content: flex-end
-        align-items: center
-        margin: 0 10px
-        font-family: $fp
-        text-align: right
-        p
-            white-space: wrap
-        img
-            height: 50px
-            padding: 0 0 0 5px
-    li:last-child
-        text-align: left
-        justify-content: flex-start
+    justify-content: center
+    align-items: center
+    background: $c4
+    box-shadow: 2px 2px 4px $cs
+    text-decoration: none
+    color: $c0
+    p
+        text-align: center
+    img
+        height: 50px
+        margin: 10px
 .meal-recipe-youtube
     text-decoration: none
     color: red
@@ -69,12 +76,15 @@
     position: relative
 .meal-ingredients-title
     font-weight: bold
+    font-family: $fp
 .meal-instructions
     background: $c3
     border-radius: 30px
     padding: 30px
     max-width: 1040px
     margin: 20px
+    box-shadow: 2px 2px 4px $cs
+
     h2
         font-family: $fh
         text-transform: capitalize

@@ -24,27 +24,34 @@ export const Recipe = (props) => {
               <ion-icon name="logo-youtube"></ion-icon>
             </a>
           </div>
-          <ul className="meal-ingredients-wrapper">
-            <div className="meal-ingredients meal-ingredients-title">
-              <li>Ingredient</li>
-              <li>Measure</li>
+          <div className="meal-ingredients-wrapper">
+            <div className="meal-ingredients-title">
+              <h2>Ingredients</h2>
             </div>
-
-            {Array.from(Array(20), (e, i) => {
-              if (
-                p["strIngredient" + (i + 1)] !== "" &&
-                p["strIngredient" + (i + 1)] !== null
-              ) {
-                return (
-                  <div className="meal-ingredients" key={i}>
-                    <li>
+            <div className="meal-inner-ingredients-wrapper">
+              {Array.from(Array(20), (e, i) => {
+                if (
+                  p["strIngredient" + (i + 1)] !== "" &&
+                  p["strIngredient" + (i + 1)] !== null
+                ) {
+                  return (
+                    <a
+                      target="_blank"
+                      href={
+                        "https://www.google.com/search?q=" +
+                        p["strIngredient" + (i + 1)]
+                      }
+                      className="meal-ingredients"
+                      key={i}
+                      rel="noreferrer"
+                    >
                       <p>
                         {p[
-                          "strIngredient" + (i + 1)
+                          "strMeasure" + (i + 1)
                         ][0].toUpperCase() +
-                          p[
-                            "strIngredient" + (i + 1)
-                          ].slice(1)}
+                          p["strMeasure" + (i + 1)].slice(
+                            1,
+                          )}
                       </p>
                       <img
                         src={
@@ -59,18 +66,20 @@ export const Recipe = (props) => {
                         }
                         alt=""
                       />
-                    </li>
-                    <li>
-                      {p[
-                        "strMeasure" + (i + 1)
-                      ][0].toUpperCase() +
-                        p["strMeasure" + (i + 1)].slice(1)}
-                    </li>
-                  </div>
-                );
-              }
-            })}
-          </ul>
+                      <p>
+                        {p[
+                          "strIngredient" + (i + 1)
+                        ][0].toUpperCase() +
+                          p[
+                            "strIngredient" + (i + 1)
+                          ].slice(1)}
+                      </p>
+                    </a>
+                  );
+                }
+              })}{" "}
+            </div>
+          </div>
           <div className="meal-instructions">
             <h2>How to make:</h2>
             <p>{p.strInstructions}</p>
@@ -78,6 +87,8 @@ export const Recipe = (props) => {
           <div className="meal-video">
             {p.strYoutube.length > 0 ? (
               <iframe
+                allowFullScreen
+                frameBorder="0"
                 src={
                   "https://www.youtube.com/embed/" +
                   p.strYoutube.substr(
@@ -89,6 +100,8 @@ export const Recipe = (props) => {
               ></iframe>
             ) : (
               <iframe
+                allowFullScreen
+                frameBorder="0"
                 src="https://www.youtube.com/embed/O5rYsoAZ_sk"
                 width="100%"
                 height="100%"
