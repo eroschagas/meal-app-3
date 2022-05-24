@@ -99,16 +99,6 @@ export const Menu = () => {
             <h1>Home</h1>
           </Link>
           <Link
-            onClick={handleMenuChange}
-            className="meal-menu-link"
-            to={-1}
-          >
-            <div className="meal-menu-icons">
-              <ion-icon name="play-back"></ion-icon>{" "}
-            </div>
-            <h1>Previous</h1>
-          </Link>
-          <Link
             onMouseEnter={handleAnimationInRandom}
             onMouseLeave={handleAnimationOut}
             className="meal-menu-link"
