@@ -153,10 +153,11 @@ html {
 }
 
 .menu-logo {
-  background: #ffffff;
-  padding: 5px;
+  background: #eeeeee;
+  padding: 2px;
   border-radius: 10px;
   margin: 5px 20px;
+  border: 2px solid #fe7f2d;
 }
 
 @media (max-width: 900px) {
@@ -313,6 +314,11 @@ html {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: all 0.3s ease-in-out;
+}
+
+.home-card:hover {
+  background: #fe7f2d;
 }
 
 .social-box-on {
@@ -460,6 +466,7 @@ html {
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6117647059);
   text-decoration: none;
   color: #000000;
+  transition: all 0.3s ease-in-out;
 }
 .meal-ingredients p {
   text-align: center;
@@ -467,6 +474,10 @@ html {
 .meal-ingredients img {
   height: 50px;
   margin: 10px;
+}
+
+.meal-ingredients:hover {
+  background: #a1c181;
 }
 
 .meal-recipe-youtube {
