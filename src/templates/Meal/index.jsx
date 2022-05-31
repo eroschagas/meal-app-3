@@ -5,7 +5,7 @@ import { useFetch } from "../../hooks/useFetch";
 export const Meal = () => {
   const meal = useParams();
   const rec = useFetch(
-    "https://www.themealdb.com/api/json/v1/1/search.php?s=" +
+    "https://www.themealdb.com/api/json/v1/1/lookup.php?i=" +
       meal.meal,
     "meals",
   );

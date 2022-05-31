@@ -15,7 +15,7 @@ export const Country = () => {
           {meal.map((p) => (
             <Link
               className="meal-card"
-              to={"/region/" + p.strMeal}
+              to={"/region/" + p.idMeal}
               key={p.idMeal}
             >
               <h2>{p.strMeal}</h2>

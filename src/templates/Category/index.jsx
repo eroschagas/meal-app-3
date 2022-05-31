@@ -15,7 +15,7 @@ export const Category = () => {
           {meal.map((p) => (
             <Link
               className="meal-card"
-              to={"/" + cat.category + "/" + p.strMeal}
+              to={"/" + cat.category + "/" + p.idMeal}
               key={p.idMeal}
             >
               <h2>{p.strMeal}</h2>
