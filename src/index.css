@@ -261,17 +261,18 @@ html {
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6117647059);
   margin: 10px 0;
 }
-.meal-home p {
+
+.meal-home-text {
   margin: 10px;
   font-family: "Montserrat", sans-serif;
   font-size: 20px;
   color: #ffffff;
 }
-.meal-home p span {
+.meal-home-text span {
   font-weight: bold;
   position: relative;
 }
-.meal-home p span a {
+.meal-home-text span a {
   text-decoration: none;
   color: #ffffff;
 }

@@ -58,26 +58,64 @@ export const FetchSearch = () => {
     "meals",
   );
 
-  const beefNames = fetchBeef.map((p) => p.strMeal);
-  const chickenNames = fetchChicken.map((p) => p.strMeal);
-  const dessertNames = fetchDessert.map((p) => p.strMeal);
-  const lambNames = fetchLamb.map((p) => p.strMeal);
+  const beefNames = fetchBeef.map((p) => ({
+    strMeal: p.strMeal,
+    idMeal: p.idMeal,
+  }));
+  const chickenNames = fetchChicken.map((p) => ({
+    strMeal: p.strMeal,
+    idMeal: p.idMeal,
+  }));
+  const dessertNames = fetchDessert.map((p) => ({
+    strMeal: p.strMeal,
+    idMeal: p.idMeal,
+  }));
+  const lambNames = fetchLamb.map((p) => ({
+    strMeal: p.strMeal,
+    idMeal: p.idMeal,
+  }));
   const miscellaneousNames = fetchMiscellaneous.map(
-    (p) => p.strMeal,
+    (p) => ({
+      strMeal: p.strMeal,
+      idMeal: p.idMeal,
+    }),
   );
-  const pastaNames = fetchPasta.map((p) => p.strMeal);
-  const porkNames = fetchPork.map((p) => p.strMeal);
-  const seaFoodNames = fetchSeafood.map((p) => p.strMeal);
-  const sideNames = fetchSide.map((p) => p.strMeal);
-  const starterNames = fetchStarter.map((p) => p.strMeal);
-  const veganNames = fetchVegan.map((p) => p.strMeal);
-  const vegetarianNames = fetchVegetarian.map(
-    (p) => p.strMeal,
-  );
-  const breakfastNames = fetchBreakfast.map(
-    (p) => p.strMeal,
-  );
-  const goatNames = fetchGoat.map((p) => p.strMeal);
+  const pastaNames = fetchPasta.map((p) => ({
+    strMeal: p.strMeal,
+    idMeal: p.idMeal,
+  }));
+  const porkNames = fetchPork.map((p) => ({
+    strMeal: p.strMeal,
+    idMeal: p.idMeal,
+  }));
+  const seaFoodNames = fetchSeafood.map((p) => ({
+    strMeal: p.strMeal,
+    idMeal: p.idMeal,
+  }));
+  const sideNames = fetchSide.map((p) => ({
+    strMeal: p.strMeal,
+    idMeal: p.idMeal,
+  }));
+  const starterNames = fetchStarter.map((p) => ({
+    strMeal: p.strMeal,
+    idMeal: p.idMeal,
+  }));
+  const veganNames = fetchVegan.map((p) => ({
+    strMeal: p.strMeal,
+    idMeal: p.idMeal,
+  }));
+  const vegetarianNames = fetchVegetarian.map((p) => ({
+    strMeal: p.strMeal,
+    idMeal: p.idMeal,
+  }));
+  const breakfastNames = fetchBreakfast.map((p) => ({
+    strMeal: p.strMeal,
+    idMeal: p.idMeal,
+  }));
+  const goatNames = fetchGoat.map((p) => ({
+    strMeal: p.strMeal,
+    idMeal: p.idMeal,
+  }));
   const fetchNames = [
     ...beefNames,
     ...chickenNames,
@@ -94,5 +132,6 @@ export const FetchSearch = () => {
     ...breakfastNames,
     ...goatNames,
   ];
+
   return fetchNames;
 };

@@ -13,7 +13,7 @@ export const Home = () => {
   return (
     <div className="meal-home">
       <img src={Logo} alt="Logo" />
-      <p>
+      <div className="meal-home-text">
         Find Your Meal is a portfolio website made by{" "}
         <span onMouseEnter={handleSocialOn}>
           Eros Chagas{" "}
@@ -68,7 +68,7 @@ export const Home = () => {
         a button labeled as &quot;Try another recipe&quot;
         to search new recipes on youtube.
         <br /> Hope you find your meal!
-      </p>
+      </div>
       <Link className="home-card" to={"/categories"}>
         Categories
       </Link>

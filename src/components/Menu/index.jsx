@@ -180,20 +180,25 @@ export const Menu = () => {
                 <ul>
                   {search
                     .filter((p) => {
-                      return p
+                      return p.strMeal
                         .toLowerCase()
                         .includes(
                           searchValue.toLowerCase(),
                         );
                     })
                     .map((p) => (
-                      <li key={p}>
+                      <li key={p.idMeal}>
                         <Link
                           onClick={handleMenuChange}
                           className="menu-search-link"
-                          to={"/" + "redirsearch" + "/" + p}
+                          to={
+                            "/" +
+                            "redirsearch" +
+                            "/" +
+                            p.idMeal
+                          }
                         >
-                          {p}
+                          {p.strMeal}
                         </Link>
                       </li>
                     ))}
