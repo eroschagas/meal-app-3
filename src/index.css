@@ -144,8 +144,10 @@ html {
 }
 
 .menu-search-link {
+  text-align: left;
   text-decoration: none;
   color: #ffffff;
+  padding: 12px 0;
 }
 
 .menu-bars-container {
